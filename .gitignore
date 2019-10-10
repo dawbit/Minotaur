@@ -19,6 +19,9 @@ x64/
 x86/
 bld/
 [Bb]in/
+[Bb]in/Debug/Minotaur.exe
+[Bb]in/Debug/Minotaur.exe.config
+[Bb]in/Debug/Minotaur.pdb
 [Oo]bj/
 [Ll]og/
 
@@ -267,3 +270,5 @@ Minotaur.csproj.FileListAbsolute.txt
 
 # json
 *.json
+obj/Debug/*.*
+
