@@ -32,10 +32,17 @@
             this.loadButton = new System.Windows.Forms.Button();
             this.mazeListBox = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.algorithmComboBox = new System.Windows.Forms.ComboBox();
             this.createButton = new System.Windows.Forms.Button();
+            this.algorithmComboBox = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.widthUpDown = new System.Windows.Forms.NumericUpDown();
+            this.heightUpDown = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.widthUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.heightUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -73,6 +80,11 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.heightUpDown);
+            this.groupBox2.Controls.Add(this.widthUpDown);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.createButton);
             this.groupBox2.Controls.Add(this.algorithmComboBox);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -83,14 +95,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Create new maze";
             // 
-            // algorithmComboBox
-            // 
-            this.algorithmComboBox.FormattingEnabled = true;
-            this.algorithmComboBox.Location = new System.Drawing.Point(163, 133);
-            this.algorithmComboBox.Name = "algorithmComboBox";
-            this.algorithmComboBox.Size = new System.Drawing.Size(121, 37);
-            this.algorithmComboBox.TabIndex = 3;
-            // 
             // createButton
             // 
             this.createButton.Location = new System.Drawing.Point(163, 450);
@@ -100,6 +104,85 @@
             this.createButton.Text = "Create";
             this.createButton.UseVisualStyleBackColor = true;
             this.createButton.Click += new System.EventHandler(this.CreateButton_Click);
+            // 
+            // algorithmComboBox
+            // 
+            this.algorithmComboBox.FormattingEnabled = true;
+            this.algorithmComboBox.Location = new System.Drawing.Point(163, 133);
+            this.algorithmComboBox.Name = "algorithmComboBox";
+            this.algorithmComboBox.Size = new System.Drawing.Size(166, 37);
+            this.algorithmComboBox.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(50, 136);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(107, 29);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Algorytm";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(83, 179);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(74, 29);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Width";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(74, 222);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(83, 29);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Height";
+            // 
+            // widthUpDown
+            // 
+            this.widthUpDown.Location = new System.Drawing.Point(163, 177);
+            this.widthUpDown.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.widthUpDown.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.widthUpDown.Name = "widthUpDown";
+            this.widthUpDown.Size = new System.Drawing.Size(92, 35);
+            this.widthUpDown.TabIndex = 9;
+            this.widthUpDown.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // heightUpDown
+            // 
+            this.heightUpDown.Location = new System.Drawing.Point(164, 220);
+            this.heightUpDown.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.heightUpDown.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.heightUpDown.Name = "heightUpDown";
+            this.heightUpDown.Size = new System.Drawing.Size(91, 35);
+            this.heightUpDown.TabIndex = 10;
+            this.heightUpDown.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // Main
             // 
@@ -112,6 +195,9 @@
             this.Text = "Main";
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.widthUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.heightUpDown)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -124,6 +210,11 @@
         private System.Windows.Forms.Button loadButton;
         private System.Windows.Forms.ComboBox algorithmComboBox;
         private System.Windows.Forms.Button createButton;
+        private System.Windows.Forms.NumericUpDown heightUpDown;
+        private System.Windows.Forms.NumericUpDown widthUpDown;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
 

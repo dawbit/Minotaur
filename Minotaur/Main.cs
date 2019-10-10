@@ -20,6 +20,7 @@ namespace Minotaur
             init();
 
             algorithmComboBox.Items.Add("Test");
+            algorithmComboBox.Items.Add("Test2");
             //tutaj dodaj swoją opcję
             algorithmComboBox.SelectedIndex = 0;
         }
@@ -40,6 +41,7 @@ namespace Minotaur
                 }
             }
 
+            //zapisywanie pliku do formatu json
             string json = JsonConvert.SerializeObject(grid);
             string path = Variables.Instance.path + "\\" + DateTime.Now.ToString("MM-dd-yyyy_h-mm-ss") + ".json";
 
@@ -53,12 +55,18 @@ namespace Minotaur
         private void CreateButton_Click(object sender, EventArgs e)
         {
             string s = algorithmComboBox.SelectedItem.ToString();
+            int w = (int)widthUpDown.Value;
+            int h = (int)heightUpDown.Value;
+
             switch (s)
             {
                 case "Test":
                     TestAlgorithm();
                     break;
-                    //tutaj dodaj case'a ze swoim algorytmem
+                //tutaj dodaj case'a ze swoim algorytmem
+                case "Test2":
+                    Algorithms.Test2.Generate(w, h);
+                    break;
             }
 
             init();
