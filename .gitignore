@@ -354,3 +354,11 @@ MigrationBackup/
 
 # Mazes
 [Mm]aze/
+
+# wtf?
+Minotaur.exe
+Minotaur.pdb
+Minotaur.exe.config
+Minotaur.csproj.CoreCompileInputs.cache
+Minotaur.csproj.FileListAbsolute.txt
+Minotaur.csproj.GenerateResource.cache
