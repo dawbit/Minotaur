@@ -19,7 +19,7 @@ namespace Minotaur.Algorithms
             {
                 for (int j = 0; j < h; j++)
                 {
-                    grid[i, j] = new Cell(i * size, j * size);
+                    grid[i, j] = new Cell(i, j);
                 }
             }
             

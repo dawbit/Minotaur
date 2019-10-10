@@ -32,7 +32,7 @@ namespace Minotaur
         {
             string workingDirectory = Environment.CurrentDirectory;
             this.path = Directory.GetParent(workingDirectory).Parent.FullName + "\\Maze";
-            this.size = 40;
+            this.size = 20;
         }
     }
 }

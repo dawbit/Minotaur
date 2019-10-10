@@ -25,6 +25,7 @@ namespace Minotaur
             this.height = grid.GetLength(1);
             this.size = Variables.Instance.size;
             this.Size = new Size((width + 1) * size, (height + 1) * size);
+            this.ClientSize = new Size(width * size + 1, height * size + 1);
         }
 
         private void PaintGrid(object sender, PaintEventArgs e)
@@ -42,13 +43,13 @@ namespace Minotaur
                     Cell c = this.grid[i, j];
 
                     if (c.Walls[0])
-                        g.DrawLine(myPen, c.X, c.Y, c.X + size, c.Y);
+                        g.DrawLine(myPen, c.X * size,       c.Y * size,      (c.X + 1) * size,  c.Y * size);
                     if (c.Walls[1])
-                        g.DrawLine(myPen, c.X + size, c.Y, c.X + size, c.Y + size);
+                        g.DrawLine(myPen, (c.X + 1) * size, c.Y * size,      (c.X + 1) * size, (c.Y + 1) * size);
                     if (c.Walls[2])
-                        g.DrawLine(myPen, c.X, c.Y + size, c.X + size, c.Y + size);
+                        g.DrawLine(myPen, c.X * size,      (c.Y + 1) * size, (c.X + 1) * size, (c.Y + 1) * size);
                     if (c.Walls[3])
-                        g.DrawLine(myPen, c.X, c.Y, c.X, c.Y + size);
+                        g.DrawLine(myPen, c.X * size,       c.Y * size,       c.X * size,      (c.Y + 1) * size);
                 }
             }
         }

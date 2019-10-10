@@ -19,37 +19,17 @@ namespace Minotaur
             InitializeComponent();
             init();
 
-            algorithmComboBox.Items.Add("Test");
-            algorithmComboBox.Items.Add("Test2");
             //tutaj dodaj swoją opcję
+            algorithmComboBox.Items.Add("Test2");
+            algorithmComboBox.Items.Add("Prim's");
+
             algorithmComboBox.SelectedIndex = 0;
-        }
 
-        private void TestAlgorithm()
-        {
             int size = Variables.Instance.size;
-            int width = 8;
-            int height = 10;
-            Cell[,] grid = new Cell[width, height];
+            Rectangle resolution = Screen.PrimaryScreen.Bounds;
 
-            for (int i = 0; i < width; i++)
-            {
-                for (int j = 0; j < height; j++)
-                {
-                    grid[i, j] = new Cell(i * size, j * size);
-                    grid[i, j].Randomize();
-                }
-            }
-
-            //zapisywanie pliku do formatu json
-            string json = JsonConvert.SerializeObject(grid);
-            string path = Variables.Instance.path + "\\" + DateTime.Now.ToString("MM-dd-yyyy_h-mm-ss") + ".json";
-
-            using (var tw = new StreamWriter(path, true))
-            {
-                tw.WriteLine(json.ToString());
-                tw.Close();
-            }
+            widthUpDown.Maximum = resolution.Width / size - 1;
+            heightUpDown.Maximum = resolution.Height / size - 3;
         }
 
         private void CreateButton_Click(object sender, EventArgs e)
@@ -60,12 +40,12 @@ namespace Minotaur
 
             switch (s)
             {
-                case "Test":
-                    TestAlgorithm();
-                    break;
                 //tutaj dodaj case'a ze swoim algorytmem
                 case "Test2":
                     Algorithms.Test2.Generate(w, h);
+                    break;
+                case "Prim's":
+                    Algorithms.Prims.Generate(w, h);
                     break;
             }
 

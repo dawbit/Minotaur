@@ -35,6 +35,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Minimap2D";
             this.Text = "Minimap2D";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.PaintGrid);
