@@ -61,8 +61,3 @@
 #*.PDF   diff=astextplain
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
-
-###############################################################################
-# set c# as the language of the project
-###############################################################################
-*.sql linguist-detectable=false
