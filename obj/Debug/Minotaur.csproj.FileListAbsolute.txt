@@ -1,0 +1,14 @@
+D:\Semestr5\IO\Minotaur\Minotaur\bin\Debug\Minotaur.exe.config
+D:\Semestr5\IO\Minotaur\Minotaur\bin\Debug\Minotaur.exe
+D:\Semestr5\IO\Minotaur\Minotaur\bin\Debug\Minotaur.pdb
+D:\Semestr5\IO\Minotaur\Minotaur\bin\Debug\Newtonsoft.Json.dll
+D:\Semestr5\IO\Minotaur\Minotaur\bin\Debug\Newtonsoft.Json.xml
+D:\Semestr5\IO\Minotaur\Minotaur\obj\Debug\Minotaur.Main.resources
+D:\Semestr5\IO\Minotaur\Minotaur\obj\Debug\Minotaur.Properties.Resources.resources
+D:\Semestr5\IO\Minotaur\Minotaur\obj\Debug\Minotaur.csproj.GenerateResource.cache
+D:\Semestr5\IO\Minotaur\Minotaur\obj\Debug\Minotaur.csproj.CoreCompileInputs.cache
+D:\Semestr5\IO\Minotaur\Minotaur\obj\Debug\Minotaur.csproj.CopyComplete
+D:\Semestr5\IO\Minotaur\Minotaur\obj\Debug\Minotaur.exe
+D:\Semestr5\IO\Minotaur\Minotaur\obj\Debug\Minotaur.pdb
+D:\Semestr5\IO\Minotaur\Minotaur\obj\Debug\Minotaur.Minimap2D.resources
+D:\Semestr5\IO\Minotaur\Minotaur\obj\Debug\Minotaur.csprojAssemblyReference.cache
