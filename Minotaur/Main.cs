@@ -22,6 +22,7 @@ namespace Minotaur
             //tutaj dodaj swoją opcję
             algorithmComboBox.Items.Add("Test2");
             algorithmComboBox.Items.Add("Prim's");
+            algorithmComboBox.Items.Add("Kruskal's");
 
             algorithmComboBox.SelectedIndex = 0;
 
@@ -46,6 +47,9 @@ namespace Minotaur
                     break;
                 case "Prim's":
                     Algorithms.Prims.Generate(w, h);
+                    break;
+                case "Kruskal's":
+                    Algorithms.Kruskal.Generate(w, h);
                     break;
             }
 

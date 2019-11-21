@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Algorithms\Kruskal.cs" />
     <Compile Include="Algorithms\Prims.cs" />
     <Compile Include="Algorithms\Test2.cs" />
     <Compile Include="Cell.cs" />
