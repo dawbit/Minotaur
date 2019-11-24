@@ -23,6 +23,7 @@ namespace Minotaur
             algorithmComboBox.Items.Add("Test2");
             algorithmComboBox.Items.Add("Prim's");
             algorithmComboBox.Items.Add("Kruskal's");
+            algorithmComboBox.Items.Add("Growing Tree");
 
             algorithmComboBox.SelectedIndex = 0;
 
@@ -50,6 +51,9 @@ namespace Minotaur
                     break;
                 case "Kruskal's":
                     Algorithms.Kruskal.Generate(w, h);
+                    break;
+                case "Growing Tree":
+                    Algorithms.GrowingTree.Generate(w, h);
                     break;
             }
 
