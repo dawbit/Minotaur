@@ -49,12 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Algorithms\Backtracker.cs" />
     <Compile Include="Algorithms\GrowingTree.cs" />
     <Compile Include="Algorithms\Kruskal.cs" />
     <Compile Include="Algorithms\Prims.cs" />
     <Compile Include="Algorithms\Test2.cs" />
     <Compile Include="Cell.cs" />
-    <Compile Include="GrowingTree.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
