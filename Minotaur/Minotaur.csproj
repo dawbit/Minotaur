@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Algorithms\Backtracker.cs" />
     <Compile Include="Algorithms\GrowingTree.cs" />
+    <Compile Include="Algorithms\HuntAndKill.cs" />
     <Compile Include="Algorithms\Kruskal.cs" />
     <Compile Include="Algorithms\Prims.cs" />
     <Compile Include="Algorithms\Test2.cs" />
