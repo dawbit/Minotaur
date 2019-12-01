@@ -25,6 +25,7 @@ namespace Minotaur
             algorithmComboBox.Items.Add("Kruskal's");
             algorithmComboBox.Items.Add("Growing Tree");
             algorithmComboBox.Items.Add("Backtrack");
+            algorithmComboBox.Items.Add("Hunt'n'kill");
 
             algorithmComboBox.SelectedIndex = 0;
 
@@ -58,6 +59,9 @@ namespace Minotaur
                     break;
                 case "Backtrack":
                     Algorithms.Backtracker.Generate(w, h);
+                    break;
+                case "Hunt'n'kill":
+                    Algorithms.HuntAndKill.Generate(w, h);
                     break;
             }
 
