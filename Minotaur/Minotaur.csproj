@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Algorithms\AStar.cs" />
     <Compile Include="Algorithms\Backtracker.cs" />
     <Compile Include="Algorithms\GrowingTree.cs" />
     <Compile Include="Algorithms\HuntAndKill.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="Minimap2D.Designer.cs">
       <DependentUpon>Minimap2D.cs</DependentUpon>
     </Compile>
+    <Compile Include="Node.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Variables.cs" />

@@ -178,6 +178,7 @@
             // 
             // algorithmComboBox
             // 
+            this.algorithmComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.algorithmComboBox.FormattingEnabled = true;
             this.algorithmComboBox.Location = new System.Drawing.Point(163, 133);
             this.algorithmComboBox.Name = "algorithmComboBox";

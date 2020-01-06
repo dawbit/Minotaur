@@ -31,6 +31,8 @@
             this.startButton = new System.Windows.Forms.Button();
             this.endButton = new System.Windows.Forms.Button();
             this.lunch3DButton = new System.Windows.Forms.Button();
+            this.algorithmComboBox = new System.Windows.Forms.ComboBox();
+            this.findButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // startButton
@@ -66,11 +68,34 @@
             this.lunch3DButton.UseVisualStyleBackColor = true;
             this.lunch3DButton.Click += new System.EventHandler(this.Lunch3DButton_Click);
             // 
+            // algorithmComboBox
+            // 
+            this.algorithmComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.algorithmComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.algorithmComboBox.FormattingEnabled = true;
+            this.algorithmComboBox.Location = new System.Drawing.Point(464, 210);
+            this.algorithmComboBox.Name = "algorithmComboBox";
+            this.algorithmComboBox.Size = new System.Drawing.Size(130, 37);
+            this.algorithmComboBox.TabIndex = 4;
+            // 
+            // findButton
+            // 
+            this.findButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.findButton.Location = new System.Drawing.Point(451, 274);
+            this.findButton.Name = "findButton";
+            this.findButton.Size = new System.Drawing.Size(70, 70);
+            this.findButton.TabIndex = 5;
+            this.findButton.Text = "Find";
+            this.findButton.UseVisualStyleBackColor = true;
+            this.findButton.Click += new System.EventHandler(this.findButton_Click);
+            // 
             // Minimap2D
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.findButton);
+            this.Controls.Add(this.algorithmComboBox);
             this.Controls.Add(this.lunch3DButton);
             this.Controls.Add(this.endButton);
             this.Controls.Add(this.startButton);
@@ -88,5 +113,7 @@
         private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.Button endButton;
         private System.Windows.Forms.Button lunch3DButton;
+        private System.Windows.Forms.ComboBox algorithmComboBox;
+        private System.Windows.Forms.Button findButton;
     }
 }

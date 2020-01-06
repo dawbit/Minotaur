@@ -85,6 +85,13 @@ namespace Minotaur
 
         private void init()
         {
+            if (!Directory.Exists(Variables.Instance.path))
+            {
+                Directory.CreateDirectory(Variables.Instance.path);
+                Console.WriteLine("Nie istnieje");
+                Console.WriteLine(Variables.Instance.path);
+            }
+
             string[] files = Directory.GetFiles(Variables.Instance.path);
             mazeListBox.Items.Clear();
 
