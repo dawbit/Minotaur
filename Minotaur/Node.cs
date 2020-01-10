@@ -25,10 +25,6 @@ namespace Minotaur
         {
             this.Walls = c.Walls;
         }
-        public Node(Point p) : base(p.X / Variables.Instance.size, p.Y / Variables.Instance.size)
-        {
-
-        }
 
         public Point ToPoint()
         {

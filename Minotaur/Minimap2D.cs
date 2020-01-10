@@ -107,7 +107,7 @@ namespace Minotaur
             int x = relativePoint.X;
             int y = relativePoint.Y;
 
-            if (x <= width * size && y <= height * size)
+            if (x < width * size && y < height * size)
             {
                 x -= x % size;
                 y -= y % size;

@@ -78,10 +78,8 @@ namespace Minotaur.Algorithms
                 closed.Add(current);
                 open.Remove(current);
 
-                Console.WriteLine("Current: " + current.X + " " + current.Y);
                 if (current.Equals(end))
                 {
-                    Console.WriteLine("Doszedlem do end");
                     return current;
                 }
 
