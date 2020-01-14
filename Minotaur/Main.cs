@@ -20,7 +20,6 @@ namespace Minotaur
             init();
 
             //tutaj dodaj swoją opcję
-            algorithmComboBox.Items.Add("Test2");
             algorithmComboBox.Items.Add("Prim's");
             algorithmComboBox.Items.Add("Kruskal's");
             algorithmComboBox.Items.Add("Growing Tree");
@@ -45,9 +44,6 @@ namespace Minotaur
             switch (s)
             {
                 //tutaj dodaj case'a ze swoim algorytmem
-                case "Test2":
-                    Algorithms.Test2.Generate(w, h);
-                    break;
                 case "Prim's":
                     Algorithms.Prims.Generate(w, h);
                     break;

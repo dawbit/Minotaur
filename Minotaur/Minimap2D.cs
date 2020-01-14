@@ -100,6 +100,12 @@ namespace Minotaur
                 case "Dijkstra":
                     a = new Algorithms.Pathfinding(start, end, grid, "Dijkstra");
                     break;
+                case "Dijkstra":
+                    Algorithms.Dijkstra dijkstra = new Algorithms.Dijkstra(start, end, grid);
+                    path = dijkstra.GetShortestPath();
+                    Console.WriteLine(path.ToString());
+                    break;
+
             }
 
             path = a.GetShortestPath();
