@@ -110,13 +110,12 @@ namespace Minotaur.Algorithms
 
         Node Dijkstra()
         {
-            List<Node> open = new List<Node>();
-            List<Node> closed = new List<Node>();
-            List<Node> neighbours;
-            List<Node> temp = new List<Node>();
-            start.gCost = 0;
-            start.hCost = Distance(start, end);
-            open.Add(start);
+            List<Node> open = new List<Node>(); // list with all not calculated nodes
+            List<Node> closed = new List<Node>(); // list with all already calculated nodes
+            List<Node> neighbours; // list with all available neighbour nodes
+            List<Node> temp = new List<Node>(); // temporary list 
+
+            open.Add(start); // start position (green cell)
 
             while (open.Count > 0)
             {
@@ -124,28 +123,28 @@ namespace Minotaur.Algorithms
 
                 foreach (Node current in open)
                 {
-                    neighbours = Neighbours(current);
+                    neighbours = Neighbours(current); // we find all neighbours to our node
 
-                    foreach(Node n in neighbours)
+                    foreach (Node n in neighbours)
                     {
-                        if (!temp.Contains(n) && !closed.Contains(n))
+                        if (!temp.Contains(n) && !closed.Contains(n)) // for each neighbour node, which is not already in closed and temporary set, we add parent (current neighbours), now current neighbours is in temporary node list
                         {
                             n.parent = current;
                             temp.Add(n);
                         }
 
-                        if (n.Equals(end))
+                        if (n.Equals(end)) // if current node is our target node, we end the program and return this node
                         {
                             return current;
                         }
                     }
                 }
-                closed.AddRange(open);
-                open.Clear();
-                open.AddRange(temp);
+                closed.AddRange(open); // add open cell to closed list
+                open.Clear(); // clearing open at the time cell
+                open.AddRange(temp); // add temporary to now open list
             }
 
-            return null;
+            return null; // if the path wasn't found, return null
         }
 
         public List<Point> GetShortestPath() // pathfinding algorithm returns last node and this function backtracks its parents, creating a path from start to target node
