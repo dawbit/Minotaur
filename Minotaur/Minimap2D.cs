@@ -89,14 +89,21 @@ namespace Minotaur
 
         private void findButton_Click(object sender, EventArgs e)
         {
+            Algorithms.Pathfinding a = null;
+
             switch (algorithmComboBox.SelectedItem.ToString())
             {
                 case "A*":
-                    Algorithms.AStar a = new Algorithms.AStar(start, end, grid);
-                    path = a.GetShortestPath();
-                    Console.WriteLine(path.ToString());
+                    a = new Algorithms.Pathfinding(start, end, grid, "AStar");
+                    break;
+
+                case "Dijkstra":
+                    a = new Algorithms.Pathfinding(start, end, grid, "Dijkstra");
                     break;
             }
+
+            path = a.GetShortestPath();
+            Console.WriteLine(path.ToString());
 
             this.Invalidate();
         }
