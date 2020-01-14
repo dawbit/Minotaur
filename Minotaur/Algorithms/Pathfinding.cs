@@ -35,9 +35,9 @@ namespace Minotaur.Algorithms
             Console.WriteLine("End: " + end.X + " " + end.Y);
         }
 
-        double Distance(Node a, Node b) // distance (h cost) is calculated from pitagorean triangle
+        double Distance(Node a, Node b) // distance (h cost) is calculated with Manhattan method
         {
-            return Math.Round(Math.Sqrt((a.X - b.X) * (a.X - b.X) + (a.Y - b.Y) * (a.Y - b.Y)));
+            return Math.Abs(a.X - b.X) + Math.Abs(a.Y - b.Y);
         }
 
         List<Node> Neighbours(Node n) // we look for neighbour in 4 direction (top, right, bottom, left) and check if neighbour is within our grid and if there is no wall between neighbour and current node
