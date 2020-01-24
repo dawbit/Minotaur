@@ -10,6 +10,7 @@ namespace Minotaur
     public class Variables
     {
         public string path;
+        public string mazeName;
         public int size;
         private static Variables instance;
 
@@ -33,6 +34,7 @@ namespace Minotaur
             string workingDirectory = Environment.CurrentDirectory;
             this.path = Directory.GetParent(workingDirectory).Parent.FullName + "\\Maze";
             this.size = 20;
+            this.mazeName = "sample_name";
         }
     }
 }

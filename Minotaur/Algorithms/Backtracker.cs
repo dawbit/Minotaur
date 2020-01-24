@@ -135,14 +135,7 @@ namespace Minotaur.Algorithms
             }
 
             string json = JsonConvert.SerializeObject(maze);
-            string path = Variables.Instance.path + "\\" + DateTime.Now.ToString("MM-dd-yyyy_h-mm-ss") + ".json";
-
-            using (var tw = new StreamWriter(path, true))
-            {
-                tw.WriteLine(json.ToString());
-                tw.Close();
-            }
-
+            AdditionalMethods.SaveMazeToFile(json);
         }
     }
 }

@@ -1,11 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Minotaur.Algorithms
 {
     static class Prims
@@ -133,12 +128,7 @@ namespace Minotaur.Algorithms
             string json = JsonConvert.SerializeObject(maze);
             string path = Variables.Instance.path + "\\" + DateTime.Now.ToString("MM-dd-yyyy_h-mm-ss") + ".json";
 
-            using (var tw = new StreamWriter(path, true))
-            {
-                tw.WriteLine(json.ToString());
-                tw.Close();
-            }
-
+            AdditionalMethods.SaveMazeToFile(json);
         }
     }
 }

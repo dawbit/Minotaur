@@ -31,9 +31,7 @@ namespace Minotaur.Algorithms
                     maze[i, j] = new Cell(i, j);
                     cell_value[i, j] = number;
                     number++;
-                    Console.WriteLine(cell_value[i, j]);
                 }
-                Console.WriteLine("break");
             }
 
             while (check_if_all_cells_are_connected == false)
@@ -80,7 +78,6 @@ namespace Minotaur.Algorithms
                 
                     is_Possible = false;
                 
-                    Console.WriteLine(cell_value[cell_W, cell_H]);
                     switch (cell_which_wall)
                     {
                         case 0:
@@ -98,8 +95,6 @@ namespace Minotaur.Algorithms
                                 bufor_number = cell_value[cell_W, cell_H - 1];
                                 cell_value[cell_W, cell_H - 1] = cell_value[cell_W, cell_H];
                                 }
-                                Console.WriteLine("cell W: " + cell_W + " , cell H: " + cell_H + " , cell number: " + cell_value[cell_W, cell_H]);
-                                Console.WriteLine("cell W: " + cell_W + " , cell H: " + (cell_H - 1) + " , cell number: " + cell_value[cell_W, cell_H - 1]);
                             is_Possible = true;
                         }
                             break;
@@ -118,8 +113,6 @@ namespace Minotaur.Algorithms
                                 bufor_number = cell_value[cell_W + 1, cell_H];
                                 cell_value[cell_W + 1, cell_H] = cell_value[cell_W, cell_H];
                                 }
-                                Console.WriteLine("cell W: " + cell_W + " , cell H: " + cell_H + " , cell number: " + cell_value[cell_W, cell_H]);
-                                Console.WriteLine("cell W: " + (cell_W + 1) + " , cell H: " + cell_H + " , cell number: " + cell_value[cell_W + 1, cell_H]);
                             is_Possible = true;
                         }
                             break;
@@ -138,8 +131,6 @@ namespace Minotaur.Algorithms
                                 bufor_number = cell_value[cell_W, cell_H +1];
                                 cell_value[cell_W, cell_H + 1] = cell_value[cell_W, cell_H];
                                 }
-                                Console.WriteLine("cell W: " + cell_W + " , cell H: " + cell_H + " , cell number: " + cell_value[cell_W, cell_H]);
-                                Console.WriteLine("cell W: " + cell_W + " , cell H: " + (cell_H + 1) + " , cell number: " + cell_value[cell_W, cell_H + 1]);
                             is_Possible = true;
                         }
                             break;
@@ -158,8 +149,6 @@ namespace Minotaur.Algorithms
                                 bufor_number = cell_value[cell_W - 1, cell_H];
                                     cell_value[cell_W - 1, cell_H] = cell_value[cell_W, cell_H];
                                 }
-                                Console.WriteLine("cell W: " + cell_W + " , cell H: " + cell_H + " , cell number: " + cell_value[cell_W, cell_H]);
-                                Console.WriteLine("cell W: " + (cell_W - 1) + " , cell H: " + cell_H + " , cell number: " + cell_value[cell_W - 1, cell_H]);
                             is_Possible = true;
                         }
                             break;
@@ -194,17 +183,9 @@ namespace Minotaur.Algorithms
                     }
                 }
                 string json = JsonConvert.SerializeObject(maze);
-                string path = Variables.Instance.path + "\\" + DateTime.Now.ToString("MM-dd-yyyy_h-mm-ss") + ".json";
 
-                using (var tw = new StreamWriter(path, true))
-                {
-                    tw.WriteLine(json.ToString());
-                    tw.Close();
-                }
-            }
-
-
-
+                AdditionalMethods.SaveMazeToFile(json);
+        }
         }
     }
 

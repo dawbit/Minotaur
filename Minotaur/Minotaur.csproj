@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Algorithms\AdditionalMethods.cs" />
     <Compile Include="Algorithms\Pathfinding.cs" />
     <Compile Include="Algorithms\Backtracker.cs" />
     <Compile Include="Algorithms\Dijkstra.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="Algorithms\Kruskal.cs" />
     <Compile Include="Algorithms\Prims.cs" />
     <Compile Include="Cell.cs" />
+    <Compile Include="DependencyObject.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>

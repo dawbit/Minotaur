@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.deleteButton = new System.Windows.Forms.Button();
             this.loadButton = new System.Windows.Forms.Button();
             this.mazeListBox = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -39,6 +40,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.createButton = new System.Windows.Forms.Button();
             this.algorithmComboBox = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.nameTextBox = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.heightUpDown)).BeginInit();
@@ -47,6 +50,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.deleteButton);
             this.groupBox1.Controls.Add(this.loadButton);
             this.groupBox1.Controls.Add(this.mazeListBox);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -57,9 +61,19 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Generated mazes";
             // 
+            // deleteButton
+            // 
+            this.deleteButton.Location = new System.Drawing.Point(265, 450);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(106, 42);
+            this.deleteButton.TabIndex = 2;
+            this.deleteButton.Text = "Delete";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            // 
             // loadButton
             // 
-            this.loadButton.Location = new System.Drawing.Point(177, 450);
+            this.loadButton.Location = new System.Drawing.Point(71, 450);
             this.loadButton.Name = "loadButton";
             this.loadButton.Size = new System.Drawing.Size(106, 42);
             this.loadButton.TabIndex = 1;
@@ -77,9 +91,12 @@
             this.mazeListBox.Name = "mazeListBox";
             this.mazeListBox.Size = new System.Drawing.Size(441, 406);
             this.mazeListBox.TabIndex = 0;
+            this.mazeListBox.DoubleClick += new System.EventHandler(this.mazeListBox_DoubleClick);
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.nameTextBox);
+            this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.heightUpDown);
             this.groupBox2.Controls.Add(this.widthUpDown);
             this.groupBox2.Controls.Add(this.label3);
@@ -185,6 +202,23 @@
             this.algorithmComboBox.Size = new System.Drawing.Size(166, 37);
             this.algorithmComboBox.TabIndex = 3;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(74, 264);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(78, 29);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Name";
+            // 
+            // nameTextBox
+            // 
+            this.nameTextBox.Location = new System.Drawing.Point(163, 261);
+            this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.Size = new System.Drawing.Size(176, 35);
+            this.nameTextBox.TabIndex = 12;
+            this.nameTextBox.Text = "sample_name";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -218,6 +252,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.TextBox nameTextBox;
+        private System.Windows.Forms.Label label4;
     }
 }
 

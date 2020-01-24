@@ -37,6 +37,13 @@ namespace Minotaur
 
         private void CreateButton_Click(object sender, EventArgs e)
         {
+            createButton.Enabled = false;
+
+            if (0 < nameTextBox.Text.Length && nameTextBox.Text.Length < 30)
+                Variables.Instance.mazeName = ValidatePathName(nameTextBox.Text);
+            else
+                Variables.Instance.mazeName = "sample_name";
+
             string s = algorithmComboBox.SelectedItem.ToString();
             int w = (int)widthUpDown.Value;
             int h = (int)heightUpDown.Value;
@@ -62,6 +69,8 @@ namespace Minotaur
             }
 
             init();
+
+            createButton.Enabled = true;
         }
 
         private void LoadButton_Click(object sender, EventArgs e)
@@ -97,6 +106,37 @@ namespace Minotaur
                 string result = s.Substring(last + 1);
                 mazeListBox.Items.Add(result);
             }
+        }
+
+        private void mazeListBox_DoubleClick(object sender, EventArgs e)
+        {
+            if (mazeListBox.SelectedItem != null)
+                LoadButton_Click(sender, e);
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            if(mazeListBox.SelectedItem != null)
+            {
+                string path = mazeListBox.SelectedItem.ToString();
+                File.Delete(Variables.Instance.path + "\\" + path);
+                init();
+            }
+        }
+
+        private string ValidatePathName(string name)
+        {
+            string invalid = new string(Path.GetInvalidFileNameChars()) + new string(Path.GetInvalidPathChars());
+
+            foreach (char c in invalid)
+            {
+                name = name.Replace(c.ToString(), "");
+            }
+
+            if (name.Length <= 0)
+                name = "sample_name";
+
+            return name;
         }
     }
 }

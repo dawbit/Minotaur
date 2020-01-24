@@ -121,11 +121,22 @@ namespace Minotaur
             {
                 x -= x % size;
                 y -= y % size;
+                Point temp = new Point(x, y);
+                if (color == Color.LightGreen && end != temp)
+                    start = temp;
+                else if(start != temp)
+                    end = temp;
 
-                if (color == Color.LightGreen)
-                    start = new Point(x, y);
-                else
-                    end = new Point(x, y);
+                if (temp == end)
+                {
+                    color = Color.IndianRed;
+                    endButton.Select();
+                }
+                else if (temp == start)
+                {
+                    color = Color.LightGreen;
+                    startButton.Select();
+                }
             }
 
             this.Invalidate();
