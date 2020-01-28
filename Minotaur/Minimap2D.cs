@@ -84,7 +84,10 @@ namespace Minotaur
 
         private void Lunch3DButton_Click(object sender, EventArgs e)
         {
-            //Process.Start("D:\\Semestr5\\Unity\\Minotaur\\Minotaur\\Game\\Minotaur.exe", json);
+            //Process.Start("D:\\Semestr5\\Unity\\Minotaur\\Minotaur\\Game\\Minotaur.exe", argument1, arguments2, argument3);
+            //argument 1 - ścieżka do labiryntu json
+            //argument 2 - punkt startu
+            //argument 3 - punkt konca
         }
 
         private void findButton_Click(object sender, EventArgs e)

@@ -10,8 +10,13 @@ public class MazeGenerator : MonoBehaviour
     void Start()
     {
         Cell[,] grid;
-        string path = "D:\\Semestr5\\IO\\Minotaur\\Minotaur\\Maze\\10-17-2019_2-48-16.json";
+
+        // tutaj musicie wczytać argumenty przesłane z uruchomieniem: ścieżke do json'a, start, koniec
+
+        // string path = "D:\\Semestr5\\IO\\Minotaur\\Minotaur\\Maze\\10-17-2019_2-48-16.json";
+        string path = "";
         string json = "";
+
         using (StreamReader r = new StreamReader(path))
         {
             json = r.ReadToEnd();
