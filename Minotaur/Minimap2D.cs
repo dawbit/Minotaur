@@ -59,7 +59,7 @@ namespace Minotaur
 
         private void Lunch3DButton_Click(object sender, EventArgs e)
         {
-            //Process.Start("D:\\Semestr5\\Unity\\Minotaur\\Minotaur\\Game\\Minotaur.exe", json);
+            Process.Start("D:\\Semestr5\\Unity\\Minotaur\\Minotaur\\Game\\Minotaur.exe");//, @"D:\Semestr5\IO\Minotaur\Minotaur\Maze\10-17-2019_2-48-16.json");
         }
 
         private void Minimap2D_Click(object sender, EventArgs e)

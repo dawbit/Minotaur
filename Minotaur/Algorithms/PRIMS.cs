@@ -10,7 +10,7 @@ namespace Minotaur.Algorithms
 {
     static class Prims
     {
-        static public void Generate(int w, int h)
+        static public void Generate(int w, int h, Cell[,] paint)
         {
             int size = Variables.Instance.size;
             Cell[,] maze = new Cell[w, h];
@@ -26,6 +26,9 @@ namespace Minotaur.Algorithms
                     visited[i, j] = false;
                 }
             }
+
+            paint = maze;
+            System.Windows.Forms.MessageBox.Show("Test2");
 
             int x = r.Next(w);
             int y = r.Next(h);

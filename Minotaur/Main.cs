@@ -45,7 +45,7 @@ namespace Minotaur
                     Algorithms.Test2.Generate(w, h);
                     break;
                 case "Prim's":
-                    Algorithms.Prims.Generate(w, h);
+                    //Algorithms.Prims.Generate(w, h);
                     break;
             }
 
