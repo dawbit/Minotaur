@@ -52,7 +52,6 @@
     <Compile Include="Algorithms\AdditionalMethods.cs" />
     <Compile Include="Algorithms\Pathfinding.cs" />
     <Compile Include="Algorithms\Backtracker.cs" />
-    <Compile Include="Algorithms\Dijkstra.cs" />
     <Compile Include="Algorithms\GrowingTree.cs" />
     <Compile Include="Algorithms\HuntAndKill.cs" />
     <Compile Include="Algorithms\Kruskal.cs" />
