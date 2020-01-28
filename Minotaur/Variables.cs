@@ -9,6 +9,8 @@ namespace Minotaur
 {
     public class Variables
     {
+        public int minSize;
+        public int maxSize;
         public string path;
         public string mazeName;
         public int size;
@@ -35,6 +37,8 @@ namespace Minotaur
             this.path = Directory.GetParent(workingDirectory).Parent.FullName + "\\Maze";
             this.size = 20;
             this.mazeName = "sample_name";
+            this.minSize = 5;
+            this.maxSize = 120;
         }
     }
 }

@@ -31,8 +31,11 @@ namespace Minotaur
             int size = Variables.Instance.size;
             Rectangle resolution = Screen.PrimaryScreen.Bounds;
 
-            widthUpDown.Maximum = resolution.Width / size - 1;
-            heightUpDown.Maximum = resolution.Height / size - 3;
+            widthUpDown.Minimum = Variables.Instance.minSize;
+            heightUpDown.Minimum = Variables.Instance.minSize;
+
+            widthUpDown.Maximum = Variables.Instance.maxSize;
+            heightUpDown.Maximum = Variables.Instance.maxSize;
         }
 
         private void CreateButton_Click(object sender, EventArgs e)
@@ -45,6 +48,10 @@ namespace Minotaur
                 Variables.Instance.mazeName = "sample_name";
 
             string s = algorithmComboBox.SelectedItem.ToString();
+
+            widthUpDown.Validate();
+            heightUpDown.Validate();
+
             int w = (int)widthUpDown.Value;
             int h = (int)heightUpDown.Value;
 
@@ -83,7 +90,9 @@ namespace Minotaur
                 {
                     json = r.ReadToEnd();
                 }
-                Form minimap2d = new Minimap2D(json);
+                Form minimap2d = new Minimap2D(json, this);
+
+                this.Enabled = false;
                 minimap2d.Show();
             }
         }
@@ -93,8 +102,6 @@ namespace Minotaur
             if (!Directory.Exists(Variables.Instance.path))
             {
                 Directory.CreateDirectory(Variables.Instance.path);
-                Console.WriteLine("Nie istnieje");
-                Console.WriteLine(Variables.Instance.path);
             }
 
             string[] files = Directory.GetFiles(Variables.Instance.path);

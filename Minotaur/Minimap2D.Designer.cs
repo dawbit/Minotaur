@@ -38,7 +38,7 @@
             // startButton
             // 
             this.startButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startButton.Location = new System.Drawing.Point(272, 96);
+            this.startButton.Location = new System.Drawing.Point(652, 50);
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(70, 70);
             this.startButton.TabIndex = 0;
@@ -49,7 +49,7 @@
             // endButton
             // 
             this.endButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.endButton.Location = new System.Drawing.Point(348, 96);
+            this.endButton.Location = new System.Drawing.Point(652, 125);
             this.endButton.Name = "endButton";
             this.endButton.Size = new System.Drawing.Size(70, 70);
             this.endButton.TabIndex = 1;
@@ -60,7 +60,7 @@
             // lunch3DButton
             // 
             this.lunch3DButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lunch3DButton.Location = new System.Drawing.Point(663, 68);
+            this.lunch3DButton.Location = new System.Drawing.Point(652, 270);
             this.lunch3DButton.Name = "lunch3DButton";
             this.lunch3DButton.Size = new System.Drawing.Size(70, 70);
             this.lunch3DButton.TabIndex = 3;
@@ -73,7 +73,7 @@
             this.algorithmComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.algorithmComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.algorithmComboBox.FormattingEnabled = true;
-            this.algorithmComboBox.Location = new System.Drawing.Point(464, 210);
+            this.algorithmComboBox.Location = new System.Drawing.Point(622, 445);
             this.algorithmComboBox.Name = "algorithmComboBox";
             this.algorithmComboBox.Size = new System.Drawing.Size(130, 37);
             this.algorithmComboBox.TabIndex = 4;
@@ -81,7 +81,7 @@
             // findButton
             // 
             this.findButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.findButton.Location = new System.Drawing.Point(451, 274);
+            this.findButton.Location = new System.Drawing.Point(652, 495);
             this.findButton.Name = "findButton";
             this.findButton.Size = new System.Drawing.Size(70, 70);
             this.findButton.TabIndex = 5;
@@ -93,7 +93,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(778, 617);
             this.Controls.Add(this.findButton);
             this.Controls.Add(this.algorithmComboBox);
             this.Controls.Add(this.lunch3DButton);
@@ -102,6 +102,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Minimap2D";
             this.Text = "Minimap2D";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Minimap2D_FormClosed);
             this.Click += new System.EventHandler(this.Minimap2D_Click);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.PaintGrid);
             this.ResumeLayout(false);

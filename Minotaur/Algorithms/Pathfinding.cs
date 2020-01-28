@@ -32,7 +32,6 @@ namespace Minotaur.Algorithms
 
             start = new Node(grid[s.X / Variables.Instance.size, s.Y / Variables.Instance.size]);
             end = new Node(grid[e.X / Variables.Instance.size, e.Y / Variables.Instance.size]);
-            Console.WriteLine("End: " + end.X + " " + end.Y);
         }
 
         double Distance(Node a, Node b) // distance (h cost) is calculated with Manhattan method
@@ -135,7 +134,7 @@ namespace Minotaur.Algorithms
 
                         if (n.Equals(end)) // if current node is our target node, we end the program and return this node
                         {
-                            return current;
+                            return n;
                         }
                     }
                 }

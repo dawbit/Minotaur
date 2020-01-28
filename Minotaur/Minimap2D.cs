@@ -23,9 +23,12 @@ namespace Minotaur
         string json;
         List<Point> path;
 
-        public Minimap2D(string json)
+        Form parent;
+
+        public Minimap2D(string json, Form parent)
         {
             InitializeComponent();
+            this.parent = parent;
             typeof(Form).InvokeMember("DoubleBuffered", BindingFlags.SetProperty | BindingFlags.Instance | BindingFlags.NonPublic, null, this, new object[] { true });
 
             this.path = new List<Point>();
@@ -34,39 +37,39 @@ namespace Minotaur
             this.grid = JsonConvert.DeserializeObject<Cell[,]>(json);
             this.width = grid.GetLength(0);
             this.height = grid.GetLength(1);
+
+            Variables.Instance.size = (int)(width > height ? Math.Floor(600f / width) : Math.Floor(600f / height));
+
             this.size = Variables.Instance.size;
 
-            //this.Size = new Size(width * size + 80, height * size + 1);
-            if (height * size + 1 < 400)
-            {
-                this.ClientSize = new Size(width * size + 120, 400);
-            }
-            else
-            {
-                this.ClientSize = new Size(width * size + 120, height * size + 1);
-            }
 
-            //startButton
-            this.startButton.Location = new Point(width * size + 35, 20);
-            this.startButton.Size = new Size(50, 50);
+            int temp = width > height ? width : height;
+            this.ClientSize = new Size(800, temp * size + 1);
 
-            //endButton
-            this.endButton.Location = new Point(width * size + 35, 70);
-            this.endButton.Size = new Size(50, 50);
+            Size buttonSize = new Size(70, 70);
 
-            //3DButton
-            this.lunch3DButton.Location = new Point(width * size + 35, 120);
-            this.lunch3DButton.Size = new Size(50, 50);
+            //start button
+            this.startButton.Size = buttonSize;
+            this.startButton.Location = new Point(665, 20);
 
-            //comboBox
-            this.algorithmComboBox.Location = new Point(width * size + 15, 300);
+            //end button
+            this.endButton.Size = buttonSize;
+            this.endButton.Location = new Point(665, 100);
+
+            //3D button
+            this.lunch3DButton.Size = buttonSize;
+            this.lunch3DButton.Location = new Point(665, 220);
+
+            //combobox
+            this.algorithmComboBox.Size = new Size(120, 40);
+            this.algorithmComboBox.Location = new Point(640, 400);
             this.algorithmComboBox.Items.Add("A*");
             this.algorithmComboBox.Items.Add("Dijkstra");
             this.algorithmComboBox.SelectedIndex = 0;
 
-            //findButton
-            this.findButton.Location = new Point(width * size + 35, 330);
-            this.findButton.Size = new Size(50, 50);
+            //find button
+            this.findButton.Size = buttonSize;
+            this.findButton.Location = new Point(665, 440);
 
             this.start = new Point(0, 0);
             this.end = new Point((width - 1) * size, (height - 1) * size);
@@ -100,18 +103,21 @@ namespace Minotaur
                 case "A*":
                     a = new Algorithms.Pathfinding(start, end, grid, "AStar");
                     path = a.GetShortestPath();
-                    Console.WriteLine(path.ToString());
                     break;
 
                 case "Dijkstra":
                     dijkstra = new Algorithms.Pathfinding(start, end, grid, "Dijkstra");
                     path = dijkstra.GetShortestPath();
-                    Console.WriteLine(path.ToString());
                     break;
 
             }
 
             this.Invalidate();
+        }
+
+        private void Minimap2D_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            parent.Enabled = true;
         }
 
         private void Minimap2D_Click(object sender, EventArgs e)
@@ -175,12 +181,14 @@ namespace Minotaur
             brush = new SolidBrush(Color.IndianRed);
             g.FillRectangle(brush, end.X + 1, end.Y + 1, size - 1, size - 1);
 
-            brush = new SolidBrush(Color.Aqua);
+            myPen.Color = Color.Red;
+            myPen.Width = 2;
             if (path != null)
-                foreach (Point p in path)
+                for(int i = 0; i < path.Count - 1; i++)
                 {
-                    g.FillRectangle(brush, p.X * size + 1, p.Y * size + 1, size - 1, size - 1);
+                    g.DrawLine(myPen, path[i].X * size + 0.5f * size, path[i].Y * size + 0.5f * size, path[i + 1].X * size + 0.5f * size, path[i + 1].Y * size + 0.5f * size);
                 }
         }
+          
     }
 }

@@ -13,8 +13,8 @@ public class MazeGenerator : MonoBehaviour
 
         // tutaj musicie wczytać argumenty przesłane z uruchomieniem: ścieżke do json'a, start, koniec
 
-        // string path = "D:\\Semestr5\\IO\\Minotaur\\Minotaur\\Maze\\10-17-2019_2-48-16.json";
-        string path = "";
+        string path = @"E:\Minotaur\Minotaur\Maze\czincz 1";
+        //string path = "";
         string json = "";
 
         using (StreamReader r = new StreamReader(path))
