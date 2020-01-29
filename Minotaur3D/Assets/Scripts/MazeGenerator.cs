@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class MazeGenerator : MonoBehaviour
 {
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,9 +16,10 @@ public class MazeGenerator : MonoBehaviour
 
         // path to json with maze
         string path = args[1];
+        //string path = @"F:\Git\Minotaur\Minotaur\Minotaur\Maze\chuj2";
         string json = "";
 
-        // starting point
+        //starting point
         Vector3 start = new Vector3(int.Parse(args[2]), 0, int.Parse(args[3]));
         Vector3 end = new Vector3(int.Parse(args[4]), 0, int.Parse(args[5]));
 
@@ -62,8 +64,8 @@ public class MazeGenerator : MonoBehaviour
                 {
                     GameObject Wall = GameObject.CreatePrimitive(PrimitiveType.Cube);
                     Wall.transform.position = new Vector3(i * 10 - 5, 5, j * 10);
-                    Wall.transform.localScale = new Vector3(0.05f, 10, 10);
-                    Wall.GetComponent<Renderer>().material.color = Color.magenta;
+                    Wall.transform.localScale = new Vector3(1f, 10, 10);
+                    Wall.GetComponent<Renderer>().material.color = Color.black;
                 }
             }
 
@@ -74,7 +76,7 @@ public class MazeGenerator : MonoBehaviour
                 {
                     GameObject Wall = GameObject.CreatePrimitive(PrimitiveType.Cube);
                     Wall.transform.position = new Vector3(i * 10, 5, j * 10 - 5);
-                    Wall.transform.localScale = new Vector3(10, 10, 0.05f);
+                    Wall.transform.localScale = new Vector3(10, 10, 1f);
                     Wall.GetComponent<Renderer>().material.color = Color.green;
                 }
             }

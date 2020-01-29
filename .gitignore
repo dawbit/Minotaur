@@ -426,3 +426,6 @@ crashlytics-build.properties
 
 # Unity sln file
 /Minotaur3D/*.sln
+
+# Other
+/Minotaur3D.zip
