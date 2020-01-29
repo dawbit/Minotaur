@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -10,12 +11,15 @@ public class MazeGenerator : MonoBehaviour
     void Start()
     {
         Cell[,] grid;
+        string[] args = Environment.GetCommandLineArgs();
 
-        // tutaj musicie wczytać argumenty przesłane z uruchomieniem: ścieżke do json'a, start, koniec
-
-        string path = @"E:\Minotaur\Minotaur\Maze\czincz 1";
-        //string path = "";
+        // path to json with maze
+        string path = args[1];
         string json = "";
+
+        // starting point
+        Vector3 start = new Vector3(int.Parse(args[2]), 0, int.Parse(args[3]));
+        Vector3 end = new Vector3(int.Parse(args[4]), 0, int.Parse(args[5]));
 
         using (StreamReader r = new StreamReader(path))
         {

@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -22,10 +23,11 @@ namespace Minotaur
         Point start, end;
         string json;
         List<Point> path;
+        string pathToMaze;
 
         Form parent;
 
-        public Minimap2D(string json, Form parent)
+        public Minimap2D(string path, Form parent)
         {
             InitializeComponent();
             this.parent = parent;
@@ -33,7 +35,12 @@ namespace Minotaur
 
             this.path = new List<Point>();
 
-            this.json = json;
+            this.pathToMaze = path;
+            using (StreamReader r = new StreamReader(path))
+            {
+                this.json = r.ReadToEnd();
+            }
+
             this.grid = JsonConvert.DeserializeObject<Cell[,]>(json);
             this.width = grid.GetLength(0);
             this.height = grid.GetLength(1);
@@ -87,10 +94,13 @@ namespace Minotaur
 
         private void Lunch3DButton_Click(object sender, EventArgs e)
         {
-            //Process.Start("D:\\Semestr5\\Unity\\Minotaur\\Minotaur\\Game\\Minotaur.exe", argument1, arguments2, argument3);
-            //argument 1 - ścieżka do labiryntu json
-            //argument 2 - punkt startu
-            //argument 3 - punkt konca
+            string pathToExe = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName + "\\Minotaur.exe";
+            int sX = start.X / size;
+            int sY = start.Y / size;
+            int eX = end.X / size;
+            int eY = end.Y / size;
+
+            Process.Start(pathToExe, this.pathToMaze + " " + sX + " " + sY + " " + eX + " " + eY);
         }
 
         private void findButton_Click(object sender, EventArgs e)

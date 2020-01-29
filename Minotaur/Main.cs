@@ -85,12 +85,8 @@ namespace Minotaur
             if (mazeListBox.SelectedIndex != -1)
             {
                 string path = Variables.Instance.path + "\\" + mazeListBox.SelectedItem.ToString();
-                string json = "";
-                using (StreamReader r = new StreamReader(path))
-                {
-                    json = r.ReadToEnd();
-                }
-                Form minimap2d = new Minimap2D(json, this);
+                
+                Form minimap2d = new Minimap2D(path, this);
 
                 this.Enabled = false;
                 minimap2d.Show();
