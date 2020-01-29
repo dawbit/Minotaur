@@ -356,7 +356,6 @@ MigrationBackup/
 [Mm]aze/
 
 # wtf?
-Minotaur.exe
 Minotaur.pdb
 Minotaur.exe.config
 Minotaur.csproj.CoreCompileInputs.cache
